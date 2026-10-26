@@ -1,0 +1,11 @@
+# Compaction Laundering
+
+> A vulnerability class in AI coding agents, discovered by Pixee (Arshan Dabirsiaghi) and disclosed on 2026-10-26. A forged "[User]:" line in untrusted content (a web page, repo file, or tool result) survives context compaction and gets recorded in the summary as something the human said. The agent then acts on it.
+
+- Flattening harnesses (pi, opencode, Cline, Aider, OpenHands) recorded the forgery in 87–100% of runs. Role-typed harnesses (Codex, Gemini CLI, Qwen Code, Continue) recorded it 0% of the time.
+- Mitigations: escape role labels in untrusted content, ground the summary against real user turns, or keep messages role-typed through compaction.
+
+## Primary sources
+- [Pixee blog: Compaction Laundering](https://www.pixee.ai/blog/compaction-laundering): the full write-up
+- [arXiv:2610.29869](https://arxiv.org/abs/2610.29869): the paper
+- [pixee/compaction-laundering](https://github.com/pixee/compaction-laundering): code, data, recordings
